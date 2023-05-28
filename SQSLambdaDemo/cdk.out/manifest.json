@@ -1,0 +1,272 @@
+{
+  "version": "14.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "sqs-lambda-demo": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "sqs-lambda-demo.template.json",
+        "validateOnSynth": false
+      },
+      "metadata": {
+        "/sqs-lambda-demo": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.79cc6f6c37a69ae7a0dd71412e11f72e768af6c7e332e6ee6cdf50ac76de2397",
+              "id": "79cc6f6c37a69ae7a0dd71412e11f72e768af6c7e332e6ee6cdf50ac76de2397",
+              "packaging": "zip",
+              "sourceHash": "79cc6f6c37a69ae7a0dd71412e11f72e768af6c7e332e6ee6cdf50ac76de2397",
+              "s3BucketParameter": "AssetParameters79cc6f6c37a69ae7a0dd71412e11f72e768af6c7e332e6ee6cdf50ac76de2397S3Bucket9D0BC2AE",
+              "s3KeyParameter": "AssetParameters79cc6f6c37a69ae7a0dd71412e11f72e768af6c7e332e6ee6cdf50ac76de2397S3VersionKey8B2E8CC8",
+              "artifactHashParameter": "AssetParameters79cc6f6c37a69ae7a0dd71412e11f72e768af6c7e332e6ee6cdf50ac76de2397ArtifactHash26D9F163"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\construct-compat.js:405:62)",
+              "LegacyStackSynthesizer.doAddFileAsset (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:175:29)",
+              "LegacyStackSynthesizer.addFileAsset (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:83:25)",
+              "Stack.addFileAsset (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\stack.js:425:33)",
+              "LegacyStackSynthesizer.addFileAsset (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:87:31)",
+              "new Asset (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:40:44)",
+              "AssetCode.bind (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:258:26)",
+              "new Function (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:98:33)",
+              "C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8432:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8860:24)",
+              "Kernel._create (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8432:34)",
+              "Kernel.create (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8173:29)",
+              "KernelHost.processRequest (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9757:36)",
+              "KernelHost.run (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9720:22)",
+              "Immediate._onImmediate (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9721:46)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/sqs-lambda-demo/SqsLambdaDemoQueue/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SqsLambdaDemoQueue5B3841CC",
+            "trace": [
+              "new Queue (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-sqs\\lib\\queue.js:74:23)",
+              "C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8432:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8860:24)",
+              "Kernel._create (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8432:34)",
+              "Kernel.create (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8173:29)",
+              "KernelHost.processRequest (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9757:36)",
+              "KernelHost.run (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9720:22)",
+              "Immediate._onImmediate (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9721:46)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/sqs-lambda-demo/SQSLambdaTrigger/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SQSLambdaTriggerServiceRoleD84F0CF4",
+            "trace": [
+              "new Role (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:72:22)",
+              "new Function (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:80:35)",
+              "C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8432:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8860:24)",
+              "Kernel._create (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8432:34)",
+              "Kernel.create (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8173:29)",
+              "KernelHost.processRequest (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9757:36)",
+              "KernelHost.run (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9720:22)",
+              "Immediate._onImmediate (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9721:46)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/sqs-lambda-demo/SQSLambdaTrigger/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SQSLambdaTriggerServiceRoleDefaultPolicy6E534C50",
+            "trace": [
+              "new Policy (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.js:56:26)",
+              "Role.addToPrincipalPolicy (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:209:34)",
+              "Function.addToPrincipal (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.js:90:65)",
+              "Function.addToPrincipalOrResource (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.js:45:30)",
+              "Queue.grant (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-sqs\\lib\\queue-base.js:112:26)",
+              "Queue.grantConsumeMessages (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-sqs\\lib\\queue-base.js:63:26)",
+              "SqsEventSource.bind (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-lambda-event-sources\\lib\\sqs.js:50:20)",
+              "Function.addEventSource (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:168:16)",
+              "C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8248:134",
+              "Kernel._wrapSandboxCode (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8860:24)",
+              "C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8248:107",
+              "Kernel._ensureSync (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8841:28)",
+              "Kernel.invoke (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8248:34)",
+              "KernelHost.processRequest (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9757:36)",
+              "KernelHost.run (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9720:22)",
+              "Immediate._onImmediate (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9721:46)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/sqs-lambda-demo/SQSLambdaTrigger/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SQSLambdaTrigger17AAD6CF",
+            "trace": [
+              "new Function (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:143:26)",
+              "C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8432:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8860:24)",
+              "Kernel._create (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8432:34)",
+              "Kernel.create (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8173:29)",
+              "KernelHost.processRequest (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9757:36)",
+              "KernelHost.run (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9720:22)",
+              "Immediate._onImmediate (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9721:46)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/sqs-lambda-demo/SQSLambdaTrigger/SqsEventSource:sqslambdademoSqsLambdaDemoQueue063ABBFE/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SQSLambdaTriggerSqsEventSourcesqslambdademoSqsLambdaDemoQueue063ABBFEFD933EB9",
+            "trace": [
+              "new EventSourceMapping (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-lambda\\lib\\event-source-mapping.js:121:39)",
+              "Function.addEventSourceMapping (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:110:16)",
+              "SqsEventSource.bind (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-lambda-event-sources\\lib\\sqs.js:43:43)",
+              "Function.addEventSource (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:168:16)",
+              "C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8248:134",
+              "Kernel._wrapSandboxCode (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8860:24)",
+              "C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8248:107",
+              "Kernel._ensureSync (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8841:28)",
+              "Kernel.invoke (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8248:34)",
+              "KernelHost.processRequest (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9757:36)",
+              "KernelHost.run (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9720:22)",
+              "Immediate._onImmediate (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9721:46)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/sqs-lambda-demo/AssetParameters/79cc6f6c37a69ae7a0dd71412e11f72e768af6c7e332e6ee6cdf50ac76de2397/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters79cc6f6c37a69ae7a0dd71412e11f72e768af6c7e332e6ee6cdf50ac76de2397S3Bucket9D0BC2AE",
+            "trace": [
+              "new FileAssetParameters (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:12:36)",
+              "LegacyStackSynthesizer.doAddFileAsset (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:162:22)",
+              "LegacyStackSynthesizer.addFileAsset (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:83:25)",
+              "Stack.addFileAsset (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\stack.js:425:33)",
+              "LegacyStackSynthesizer.addFileAsset (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:87:31)",
+              "new Asset (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:40:44)",
+              "AssetCode.bind (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:258:26)",
+              "new Function (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:98:33)",
+              "C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8432:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8860:24)",
+              "Kernel._create (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8432:34)",
+              "Kernel.create (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8173:29)",
+              "KernelHost.processRequest (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9757:36)",
+              "KernelHost.run (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9720:22)",
+              "Immediate._onImmediate (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9721:46)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/sqs-lambda-demo/AssetParameters/79cc6f6c37a69ae7a0dd71412e11f72e768af6c7e332e6ee6cdf50ac76de2397/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters79cc6f6c37a69ae7a0dd71412e11f72e768af6c7e332e6ee6cdf50ac76de2397S3VersionKey8B2E8CC8",
+            "trace": [
+              "new FileAssetParameters (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:16:35)",
+              "LegacyStackSynthesizer.doAddFileAsset (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:162:22)",
+              "LegacyStackSynthesizer.addFileAsset (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:83:25)",
+              "Stack.addFileAsset (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\stack.js:425:33)",
+              "LegacyStackSynthesizer.addFileAsset (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:87:31)",
+              "new Asset (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:40:44)",
+              "AssetCode.bind (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:258:26)",
+              "new Function (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:98:33)",
+              "C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8432:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8860:24)",
+              "Kernel._create (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8432:34)",
+              "Kernel.create (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8173:29)",
+              "KernelHost.processRequest (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9757:36)",
+              "KernelHost.run (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9720:22)",
+              "Immediate._onImmediate (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9721:46)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/sqs-lambda-demo/AssetParameters/79cc6f6c37a69ae7a0dd71412e11f72e768af6c7e332e6ee6cdf50ac76de2397/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters79cc6f6c37a69ae7a0dd71412e11f72e768af6c7e332e6ee6cdf50ac76de2397ArtifactHash26D9F163",
+            "trace": [
+              "new FileAssetParameters (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:20:38)",
+              "LegacyStackSynthesizer.doAddFileAsset (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:162:22)",
+              "LegacyStackSynthesizer.addFileAsset (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:83:25)",
+              "Stack.addFileAsset (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\stack.js:425:33)",
+              "LegacyStackSynthesizer.addFileAsset (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\legacy.js:87:31)",
+              "new Asset (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:40:44)",
+              "AssetCode.bind (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:258:26)",
+              "new Function (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:98:33)",
+              "C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8432:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8860:24)",
+              "Kernel._create (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8432:34)",
+              "Kernel.create (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8173:29)",
+              "KernelHost.processRequest (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9757:36)",
+              "KernelHost.run (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9720:22)",
+              "Immediate._onImmediate (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9721:46)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/sqs-lambda-demo/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\private\\metadata-resource.js:22:30)",
+              "C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:139:9",
+              "visit (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:200:9)",
+              "visit (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:197:9)",
+              "injectMetadataResources (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:128:5)",
+              "Object.synthesize (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:17:5)",
+              "App.synth (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\stage.js:100:41)",
+              "C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8248:134",
+              "Kernel._wrapSandboxCode (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8860:24)",
+              "C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8248:107",
+              "Kernel._ensureSync (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8841:28)",
+              "Kernel.invoke (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8248:34)",
+              "KernelHost.processRequest (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9757:36)",
+              "KernelHost.run (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9720:22)",
+              "Immediate._onImmediate (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9721:46)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/sqs-lambda-demo/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\private\\metadata-resource.js:30:35)",
+              "C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:139:9",
+              "visit (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:200:9)",
+              "visit (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:197:9)",
+              "injectMetadataResources (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:128:5)",
+              "Object.synthesize (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:17:5)",
+              "App.synth (C:\\Users\\Dan\\AppData\\Local\\Temp\\jsii-kernel-GmGkao\\node_modules\\@aws-cdk\\core\\lib\\stage.js:100:41)",
+              "C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8248:134",
+              "Kernel._wrapSandboxCode (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8860:24)",
+              "C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8248:107",
+              "Kernel._ensureSync (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8841:28)",
+              "Kernel.invoke (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:8248:34)",
+              "KernelHost.processRequest (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9757:36)",
+              "KernelHost.run (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9720:22)",
+              "Immediate._onImmediate (C:\\Users\\Dan\\AppData\\Local\\Temp\\tmpj3sxhtvp\\lib\\program.js:9721:46)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ]
+      },
+      "displayName": "sqs-lambda-demo"
+    }
+  }
+}

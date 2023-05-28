@@ -1,0 +1,7 @@
+README.md
+setup.py
+sqs_lambda_demo/sqs_lambda_demo.egg-info/PKG-INFO
+sqs_lambda_demo/sqs_lambda_demo.egg-info/SOURCES.txt
+sqs_lambda_demo/sqs_lambda_demo.egg-info/dependency_links.txt
+sqs_lambda_demo/sqs_lambda_demo.egg-info/requires.txt
+sqs_lambda_demo/sqs_lambda_demo.egg-info/top_level.txt

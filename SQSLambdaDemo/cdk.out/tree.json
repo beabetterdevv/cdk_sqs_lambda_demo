@@ -1,0 +1,361 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Construct",
+          "version": "1.129.0"
+        }
+      },
+      "sqs-lambda-demo": {
+        "id": "sqs-lambda-demo",
+        "path": "sqs-lambda-demo",
+        "children": {
+          "SqsLambdaDemoQueue": {
+            "id": "SqsLambdaDemoQueue",
+            "path": "sqs-lambda-demo/SqsLambdaDemoQueue",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "sqs-lambda-demo/SqsLambdaDemoQueue/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::SQS::Queue",
+                  "aws:cdk:cloudformation:props": {
+                    "visibilityTimeout": 300
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-sqs.CfnQueue",
+                  "version": "1.129.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-sqs.Queue",
+              "version": "1.129.0"
+            }
+          },
+          "SQSLambdaTrigger": {
+            "id": "SQSLambdaTrigger",
+            "path": "sqs-lambda-demo/SQSLambdaTrigger",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "sqs-lambda-demo/SQSLambdaTrigger/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "sqs-lambda-demo/SQSLambdaTrigger/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-iam.CfnRole",
+                      "version": "1.129.0"
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "sqs-lambda-demo/SQSLambdaTrigger/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "sqs-lambda-demo/SQSLambdaTrigger/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "sqs:ReceiveMessage",
+                                    "sqs:ChangeMessageVisibility",
+                                    "sqs:GetQueueUrl",
+                                    "sqs:DeleteMessage",
+                                    "sqs:GetQueueAttributes"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": {
+                                    "Fn::GetAtt": [
+                                      "SqsLambdaDemoQueue5B3841CC",
+                                      "Arn"
+                                    ]
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "SQSLambdaTriggerServiceRoleDefaultPolicy6E534C50",
+                            "roles": [
+                              {
+                                "Ref": "SQSLambdaTriggerServiceRoleD84F0CF4"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-iam.CfnPolicy",
+                          "version": "1.129.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-iam.Policy",
+                      "version": "1.129.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-iam.Role",
+                  "version": "1.129.0"
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "sqs-lambda-demo/SQSLambdaTrigger/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "sqs-lambda-demo/SQSLambdaTrigger/Code/Stage",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.AssetStaging",
+                      "version": "1.129.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "sqs-lambda-demo/SQSLambdaTrigger/Code/AssetBucket",
+                    "children": {
+                      "Notifications": {
+                        "id": "Notifications",
+                        "path": "sqs-lambda-demo/SQSLambdaTrigger/Code/AssetBucket/Notifications",
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/core.Construct",
+                          "version": "1.129.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-s3.BucketBase",
+                      "version": "1.129.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-s3-assets.Asset",
+                  "version": "1.129.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "sqs-lambda-demo/SQSLambdaTrigger/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParameters79cc6f6c37a69ae7a0dd71412e11f72e768af6c7e332e6ee6cdf50ac76de2397S3Bucket9D0BC2AE"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParameters79cc6f6c37a69ae7a0dd71412e11f72e768af6c7e332e6ee6cdf50ac76de2397S3VersionKey8B2E8CC8"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParameters79cc6f6c37a69ae7a0dd71412e11f72e768af6c7e332e6ee6cdf50ac76de2397S3VersionKey8B2E8CC8"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "role": {
+                      "Fn::GetAtt": [
+                        "SQSLambdaTriggerServiceRoleD84F0CF4",
+                        "Arn"
+                      ]
+                    },
+                    "handler": "lambda_handler.handler",
+                    "runtime": "python3.9"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-lambda.CfnFunction",
+                  "version": "1.129.0"
+                }
+              },
+              "SqsEventSource:sqslambdademoSqsLambdaDemoQueue063ABBFE": {
+                "id": "SqsEventSource:sqslambdademoSqsLambdaDemoQueue063ABBFE",
+                "path": "sqs-lambda-demo/SQSLambdaTrigger/SqsEventSource:sqslambdademoSqsLambdaDemoQueue063ABBFE",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "sqs-lambda-demo/SQSLambdaTrigger/SqsEventSource:sqslambdademoSqsLambdaDemoQueue063ABBFE/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::EventSourceMapping",
+                      "aws:cdk:cloudformation:props": {
+                        "functionName": {
+                          "Ref": "SQSLambdaTrigger17AAD6CF"
+                        },
+                        "eventSourceArn": {
+                          "Fn::GetAtt": [
+                            "SqsLambdaDemoQueue5B3841CC",
+                            "Arn"
+                          ]
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-lambda.CfnEventSourceMapping",
+                      "version": "1.129.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-lambda.EventSourceMapping",
+                  "version": "1.129.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-lambda.Function",
+              "version": "1.129.0"
+            }
+          },
+          "AssetParameters": {
+            "id": "AssetParameters",
+            "path": "sqs-lambda-demo/AssetParameters",
+            "children": {
+              "79cc6f6c37a69ae7a0dd71412e11f72e768af6c7e332e6ee6cdf50ac76de2397": {
+                "id": "79cc6f6c37a69ae7a0dd71412e11f72e768af6c7e332e6ee6cdf50ac76de2397",
+                "path": "sqs-lambda-demo/AssetParameters/79cc6f6c37a69ae7a0dd71412e11f72e768af6c7e332e6ee6cdf50ac76de2397",
+                "children": {
+                  "S3Bucket": {
+                    "id": "S3Bucket",
+                    "path": "sqs-lambda-demo/AssetParameters/79cc6f6c37a69ae7a0dd71412e11f72e768af6c7e332e6ee6cdf50ac76de2397/S3Bucket",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnParameter",
+                      "version": "1.129.0"
+                    }
+                  },
+                  "S3VersionKey": {
+                    "id": "S3VersionKey",
+                    "path": "sqs-lambda-demo/AssetParameters/79cc6f6c37a69ae7a0dd71412e11f72e768af6c7e332e6ee6cdf50ac76de2397/S3VersionKey",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnParameter",
+                      "version": "1.129.0"
+                    }
+                  },
+                  "ArtifactHash": {
+                    "id": "ArtifactHash",
+                    "path": "sqs-lambda-demo/AssetParameters/79cc6f6c37a69ae7a0dd71412e11f72e768af6c7e332e6ee6cdf50ac76de2397/ArtifactHash",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnParameter",
+                      "version": "1.129.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Construct",
+                  "version": "1.129.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.129.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "sqs-lambda-demo/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "sqs-lambda-demo/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnResource",
+                  "version": "1.129.0"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "sqs-lambda-demo/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnCondition",
+                  "version": "1.129.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.129.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Stack",
+          "version": "1.129.0"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "@aws-cdk/core.App",
+      "version": "1.129.0"
+    }
+  }
+}
